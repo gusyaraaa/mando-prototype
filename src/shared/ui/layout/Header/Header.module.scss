@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 56px;
+  height: 74px;
+  .logos {
+    display: flex;
+    gap: 8px;
+  }
+  min-width: unset;
+}
+
+.pageLinks {
+  display: flex;
+  justify-content: center;
+  margin: 0 10px;
+  gap: 52px;
+}
+
+@media (max-width: $desktopSmall) {
+  .header {
+    height: 60px;
+    margin-bottom: 70px;
+  }
+}
+
+@media (max-width: $tablet) {
+  .header {
+    margin-bottom: 24px;
+  }
+}

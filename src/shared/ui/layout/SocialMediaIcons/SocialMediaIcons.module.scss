@@ -1,0 +1,38 @@
+.root {
+  display: flex;
+  gap: 14px;
+  height: 24px;
+
+  a {
+    opacity: 0.26;
+    transition: opacity ease var(--durNorm);
+
+    svg path {
+      transition: fill ease var(--durNorm);
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .divider {
+    height: 24px;
+    width: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(222, 215, 229, 0.052) 1.56%,
+      rgba(222, 215, 229, 0.08) 53.98%,
+      rgba(222, 215, 229, 0.04) 100%,
+      rgba(222, 215, 229, 0.052) 100%
+    );
+  }
+}
+
+@media (max-width: $tablet) {
+  .root {
+    flex-wrap: wrap;
+    height: unset;
+    gap: 23px;
+  }
+}

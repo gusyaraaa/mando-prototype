@@ -1,0 +1,33 @@
+.wrap {
+  display: flex;
+
+  &:not(:last-child) {
+    margin-bottom: 34px;
+  }
+}
+
+.column {
+  width: 100%;
+
+  &:first-child:not(:last-child) {
+    padding-right: 25px;
+    border-right: 1px solid var(--colorBorder);
+  }
+
+  &:last-child:not(:first-child) {
+    padding-left: 25px;
+  }
+}
+
+.list {
+  margin-bottom: var(--fieldMargin);
+}
+
+.truncatedValueWrap {
+  display: flex;
+  align-items: center;
+}
+
+.sign {
+  flex: 0 0 auto;
+}

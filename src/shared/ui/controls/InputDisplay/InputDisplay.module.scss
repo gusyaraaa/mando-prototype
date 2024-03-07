@@ -1,0 +1,52 @@
+.wrap {
+  position: relative;
+  margin-bottom: var(--fieldMargin);
+  cursor: default;
+
+  &.isConcatBottom,
+  &.isConcatMiddle {
+    margin-bottom: var(--fieldMarginConcatted);
+  }
+
+  &.isConcatTop > .box {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  &.isConcatMiddle > .box {
+    border-radius: 0;
+  }
+
+  &.isConcatBottom > .box {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .box {
+    @include inputBase();
+    height: var(--fieldHeight);
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 20px 24px 0;
+    user-select: none;
+
+    .icon {
+      margin-right: 10px;
+      margin-left: auto;
+      position: relative;
+      top: -10px;
+
+      svg {
+        display: block;
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .placeholder {
+      @include inputPlaceholderFloating();
+      @include inputPlaceholderFloated();
+    }
+  }
+}

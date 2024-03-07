@@ -1,0 +1,21 @@
+.wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+
+  &.withLine > *:first-child {
+    padding-right: 24px;
+    border-right: 1px solid var(--colorBorder);
+  }
+
+  @media (max-width: 1050px) {
+    grid-template-columns: unset;
+    grid-template-rows: 1fr 1fr;
+    gap: 4px;
+
+    &.withLine > *:first-child {
+      padding-right: 0;
+      border-right: none;
+    }
+  }
+}

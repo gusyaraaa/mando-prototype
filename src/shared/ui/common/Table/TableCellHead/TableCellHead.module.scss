@@ -1,0 +1,94 @@
+.headCell {
+  padding-bottom: 20px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 21px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--colorTextSecondary50);
+}
+
+.sortHeadCell {
+  cursor: pointer;
+  user-select: none;
+
+  .sortHeadCellInner {
+    display: flex;
+    height: 100%;
+  }
+
+  .sortHeadCellLabel {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    height: 100%;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: -21px;
+      height: 1px;
+      width: 100%;
+      background-color: var(--colorGreenApple);
+      opacity: 0;
+      transform: scale(0, 1);
+      transition: opacity ease var(--durNorm),
+        transform var(--easeOutCubic) var(--durNorm);
+    }
+  }
+
+  .sortHeadControl {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    width: 24px;
+    height: 24px;
+    border: 1px solid rgba(222, 215, 229, 0.16);
+    border-radius: 10px;
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity ease var(--durNorm),
+      transform var(--easeOutCubic) var(--durNorm);
+
+    svg {
+      display: block;
+      width: 16px;
+    }
+  }
+
+  &.isActive {
+    color: var(--colorText);
+    .sortHeadControl,
+    .sortHeadCellLabel:after {
+      opacity: 1;
+      transform: scale(1);
+      transition: opacity ease var(--durNorm),
+        transform var(--easeOutBack) var(--durNorm);
+    }
+
+    &.isDesc {
+      .sortHeadControl > svg {
+        path:first-child {
+          stroke: var(--colorGreenApple);
+        }
+      }
+    }
+
+    &:not(.isDesc) {
+      .sortHeadControl > svg {
+        path:last-child {
+          stroke: var(--colorGreenApple);
+        }
+      }
+    }
+  }
+
+  .tooltip {
+    margin-top: -2px;
+    margin-left: 4px;
+  }
+}

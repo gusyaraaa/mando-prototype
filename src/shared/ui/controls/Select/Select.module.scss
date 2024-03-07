@@ -1,0 +1,132 @@
+.wrap {
+  position: relative;
+  margin-bottom: var(--fieldMargin);
+
+  &.isConcatBottom,
+  &.isConcatMiddle {
+    margin-bottom: var(--fieldMarginConcatted);
+  }
+}
+
+.placeholder {
+  @include inputPlaceholderFloating();
+
+  &.isMoved {
+    @include inputPlaceholderFloated();
+  }
+}
+
+.box {
+  @include inputBase();
+  height: var(--fieldHeight);
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 20px 24px 0;
+  user-select: none;
+
+  &.isInteractive {
+    cursor: pointer;
+
+    &:hover {
+      @include inputHover();
+    }
+
+    &.isFocused {
+      @include inputFocus();
+      box-shadow: none;
+      border-bottom-width: 0px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      @include blurOrFallback(12px, var(--colorControlBlurFallback));
+    }
+  }
+
+  &.isError {
+    @include inputError();
+
+    &:hover {
+      @include inputErrorHover();
+    }
+
+    &.isFocused {
+      @include inputErrorFocus();
+    }
+  }
+
+  .isConcatTop & {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .isConcatBottom & {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .isConcatMiddle & {
+    border-radius: 0;
+  }
+
+  &.isReadOnly {
+    cursor: default;
+  }
+}
+
+.placeholder {
+  color: var(--colorInputPlaceholder);
+}
+
+.input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.optionIcon {
+  margin-right: 10px;
+  margin-left: auto;
+  position: relative;
+  top: -10px;
+
+  svg {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.arrowWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 38px;
+}
+
+.arrowDisabled {
+  opacity: 0.08;
+}
+
+.arrow {
+  display: block;
+  fill: var(--colorInputPlaceholder);
+  transition: transform var(--easeOutBack) var(--durNorm);
+
+  .isFocused & {
+    transform: rotate(180deg);
+  }
+}
+
+.wrap:hover .error,
+.wrap.isFocused .error {
+  @include inputErrorMessageOpened();
+}

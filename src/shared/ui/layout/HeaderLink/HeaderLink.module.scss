@@ -1,0 +1,47 @@
+.headerLink {
+  display: flex;
+  text-decoration: none;
+  color: var(--colorTextSecondary50);
+  user-select: none;
+  font-size: 16px;
+  font-weight: 500;
+  width: fit-content;
+  transition: color ease var(--durNorm);
+
+  &:hover {
+    transition-duration: var(--durFast);
+
+    color: var(--colorGreenApple50);
+
+    & .linkIcon svg {
+      fill: var(--colorGreenApple50);
+    }
+  }
+
+  &.isActive {
+    color: var(--colorGreenApple);
+
+    & .linkIcon svg {
+      fill: var(--colorGreenApple);
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .headerLink {
+    .linkIcon svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+.linkIcon {
+  margin-right: 10px;
+
+  & svg {
+    display: block;
+    fill: var(--colorTextSecondary50);
+    transition: fill ease var(--durNorm);
+  }
+}

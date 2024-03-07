@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+.carousel {
+  position: relative;
+  height: 100%;
+  perspective: 500px;
+
+  &.big {
+    .navigation {
+      button {
+        height: 98px;
+        width: 98px;
+        border-radius: 36px;
+      }
+      .left {
+        transform: translateX(-180%);
+      }
+      .right {
+        transform: translateX(180%);
+      }
+    }
+  }
+}
+
+.card {
+  position: absolute;
+  height: 100%;
+  transform: scaleY(calc(1 + var(--abs-offset) * -0.3))
+    translateZ(calc(var(--abs-offset) * -30rem))
+    translateX(calc(var(--offset) * 5 * -1rem));
+  transition: transform 0.3s ease-out;
+  filter: blur(2px);
+}
+
+.selected {
+  filter: none !important;
+  z-index: 10;
+  transform: none !important;
+}
+.navigation {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 42%;
+  button {
+    color: var(--colorWhite);
+    font-size: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    padding: 8px;
+    cursor: pointer;
+    background: var(--colorInputBorder08);
+    border: 1px solid var(--colorInputBorder08);
+    backdrop-filter: blur(3.5px);
+    border-radius: 16px;
+    svg {
+      fill: #ffffff;
+    }
+  }
+  .left {
+    transform: translateX(-70%);
+  }
+  .right {
+    right: 0;
+    margin-left: auto;
+    transform: translateX(70%);
+  }
+}

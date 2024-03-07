@@ -1,0 +1,21 @@
+.wrap {
+  display: flex;
+  flex-shrink: 0;
+
+  .icon {
+    &:hover path {
+      fill: var(--colorBranded);
+    }
+
+    path {
+      transition: fill ease var(--durNorm);
+      fill: var(--colorBranded60);
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .body {
+    max-width: 60vw;
+  }
+}

@@ -1,0 +1,10 @@
+<svg viewBox="0 0 280 280" width="280" height="280"
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="progressGradient" gradientTransform="rotate(-30)">
+      <stop offset="2.19%" stop-color="#8f27ff" />
+      <stop offset="125.91%" stop-color="#2f13de" />
+    </linearGradient>
+  </defs>
+  <circle cx="50%" cy="50%" r="110" strokeLinecap="round" stroke="url(#progressGradient)" stroke-width="16" fill="transparent" />
+</svg>

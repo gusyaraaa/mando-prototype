@@ -1,0 +1,24 @@
+.gridRow {
+  display: grid;
+  gap: 15px;
+}
+
+.headerRow {
+  border-bottom: 1px solid var(--colorControlBorder10);
+  margin-bottom: 55px;
+}
+
+.bodyRow {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  align-items: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--colorControlBorder10);
+  }
+}

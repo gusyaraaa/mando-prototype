@@ -1,0 +1,15 @@
+.wrap {
+  width: 100%;
+  max-width: var(--contentWidthNarrow);
+  position: relative;
+
+  &.isCentered {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: $tablet) {
+  .wrap {
+    margin-bottom: 76px;
+  }
+}

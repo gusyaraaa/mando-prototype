@@ -1,0 +1,25 @@
+.wrap {
+  position: relative;
+  padding-bottom: 100px;
+  padding-top: 20px;
+  .backButton {
+    right: unset;
+    padding: 0;
+    z-index: 98;
+  }
+}
+
+.logo {
+  margin: 0 auto 40px;
+  width: fit-content;
+}
+
+@media (max-width: $tablet) {
+  .wrap {
+    padding: 10px;
+    .backButton {
+      transform: none;
+      left: 10px;
+    }
+  }
+}
