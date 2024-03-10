@@ -1,0 +1,18 @@
+.header {
+  margin-bottom: 35px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 80px;
+
+  .button {
+    width: 100%;
+    margin-top: -20px;
+  }
+}
+
+.confirmButton {
+  width: 100%;
+}

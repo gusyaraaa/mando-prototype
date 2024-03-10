@@ -33,24 +33,9 @@
     margin-right: auto;
     max-width: var(--contentWidthNarrow);
   }
-
-  .mobileFooter {
-    display: none;
-  }
 }
 
 @media (max-width: $tablet) {
-  .moreThanTablet {
-    display: none;
-  }
-  .mobileFooter {
-    display: block;
-    margin-bottom: 24px;
-    .isNarrow & {
-      margin: 0;
-    }
-  }
-
   .content {
     .isNarrow & {
       width: 100%;
@@ -75,9 +60,6 @@
           color: var(--colorTextSecondary80);
           margin: 0;
         }
-      }
-      .mobileFooter {
-        margin-bottom: 0px;
       }
     }
   }

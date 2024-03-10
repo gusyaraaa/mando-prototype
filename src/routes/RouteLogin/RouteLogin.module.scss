@@ -1,0 +1,30 @@
+.header {
+  margin-bottom: 35px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .input {
+    margin-bottom: 0px;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .error {
+    color: var(--colorError);
+  }
+}
+
+.toRegister {
+  width: fit-content;
+  margin: 35px auto 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

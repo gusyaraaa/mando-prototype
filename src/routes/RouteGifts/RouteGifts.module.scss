@@ -1,31 +1,10 @@
-.total {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-  margin-bottom: 30px;
-}
-.search {
+.empty {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  margin-bottom: 40px;
-
-  .form {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-
-    .input {
-      margin-bottom: 0;
-    }
-
-    .detect {
-      vertical-align: middle;
-    }
-  }
-  .button {
-    min-width: 100px;
-  }
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 50px;
 }
 
 .card {
@@ -130,7 +109,7 @@
           width: 100%;
         }
 
-        .unstake {
+        .remove {
           min-width: 126px;
           color: var(--colorTextSecondary50);
           border-radius: 16px 0px 0px 16px;
@@ -141,7 +120,7 @@
           }
         }
 
-        .stake {
+        .edit {
           min-width: 110px;
           color: var(--colorGreenApple);
           border-radius: 0px 16px 16px 0px;

@@ -1,0 +1,30 @@
+.title {
+  margin-bottom: 40px;
+  line-height: 56px;
+  margin-bottom: 87px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+
+  .cell {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .controls {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+
+    .yes {
+      flex: 1 1 auto;
+    }
+    .no {
+      flex: 0 1 auto;
+    }
+  }
+}

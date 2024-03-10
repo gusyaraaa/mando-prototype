@@ -1,31 +1,8 @@
-.total {
+.empty {
   display: flex;
-  gap: 15px;
   align-items: center;
-  margin-bottom: 30px;
-}
-.search {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  margin-bottom: 40px;
-
-  .form {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-
-    .input {
-      margin-bottom: 0;
-    }
-
-    .detect {
-      vertical-align: middle;
-    }
-  }
-  .button {
-    min-width: 100px;
-  }
+  justify-content: center;
+  margin-top: 50px;
 }
 
 .card {
@@ -36,6 +13,7 @@
   display: flex;
   flex-direction: column;
   padding: 16px;
+  margin-top: 30px;
   margin-bottom: 40px;
   gap: 22px;
   position: relative;
@@ -98,8 +76,9 @@
         color: var(--colorTextSecondary50);
       }
 
-      .id {
-        min-width: 20px;
+      .from {
+        min-width: 120px;
+        text-transform: none;
       }
       .address {
         flex: 1 0 auto;
@@ -114,6 +93,37 @@
         color: #ffffff;
       }
 
+      .buttonsWrapper {
+        display: flex;
+        flex-direction: column;
+        min-width: 250px;
+        gap: 5px;
+        button {
+          height: 40px;
+          font-size: 12px;
+          line-height: 21px;
+          letter-spacing: 0.01em;
+          text-transform: uppercase;
+          padding: 9.5px 30px;
+          border: none;
+          width: 100%;
+        }
+        a {
+          text-decoration: none;
+        }
+
+        .explorer {
+          color: var(--colorTextSecondary80);
+          border-radius: 16px;
+        }
+        .accept {
+          color: var(--colorGreenApple);
+        }
+
+        .reject {
+          color: var(--colorTextSecondary50);
+        }
+      }
       .controls {
         display: flex;
         border-radius: 16px;
@@ -130,25 +140,25 @@
           width: 100%;
         }
 
-        .unstake {
+        .accept {
           min-width: 126px;
-          color: var(--colorTextSecondary50);
+          color: var(--colorGreenApple);
           border-radius: 16px 0px 0px 16px;
           background: transparent;
 
           &:disabled {
-            color: var(--colorTextSecondary13);
+            background: var(--colorGreenApple08);
+            color: var(--colorTextSecondary80);
           }
         }
 
-        .stake {
+        .reject {
           min-width: 110px;
-          color: var(--colorGreenApple);
+          color: var(--colorTextSecondary50);
           border-radius: 0px 16px 16px 0px;
 
           &:disabled {
-            background: var(--colorGreenApple08);
-            color: var(--colorTextSecondary80);
+            color: var(--colorTextSecondary13);
           }
         }
       }
