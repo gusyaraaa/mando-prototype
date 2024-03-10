@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
+import { useAccount, useConnect } from 'wagmi'
 
 import { createRoute } from 'modules/router/utils/createRoute'
 import * as links from 'modules/router/links'
@@ -20,6 +21,8 @@ import s from './RouteBounty.module.scss'
 function RouteBountyConfirm() {
   const { id } = useParams()
   const navigate = useNavigate()
+  const { isConnected } = useAccount()
+  const { connectors, connect } = useConnect()
   const [user, setUser] = useLocalStorage<UserData>(
     'mando-user',
     defaultUserData,
@@ -39,8 +42,7 @@ function RouteBountyConfirm() {
   if (!bounty)
     return <Navigate to={links.bounty(`${bounties.length + 1}`)} replace />
 
-  const submit = () => {
-    // TODO: should open a metamask wallet
+  const confirmBounty = () => {
     const filteredBounties = bounties.filter(b => b.id !== bounty.id)
     setBounties([
       ...filteredBounties,
@@ -54,6 +56,23 @@ function RouteBountyConfirm() {
       gifts: user?.gifts ? [...user.gifts, bounty] : [bounty],
     } as UserData)
     navigate(links.gifts)
+  }
+
+  const submit = () => {
+    if (!isConnected) {
+      const metamask = connectors.find(
+        connector => connector.name === 'MetaMask',
+      )
+      if (!metamask) return
+      connect(
+        { connector: metamask },
+        {
+          onSuccess: () => confirmBounty(),
+        },
+      )
+    } else {
+      confirmBounty()
+    }
   }
 
   return (

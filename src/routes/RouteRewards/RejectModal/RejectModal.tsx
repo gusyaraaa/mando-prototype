@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom'
 
 import { Modal, ModalProps } from 'modules/modal/ui/Modal'
@@ -6,18 +5,8 @@ import * as links from 'modules/router/links'
 import { useLocalStorage } from 'shared/hooks/useLocalStorage'
 import { Text } from 'shared/ui/common/Text'
 import { Title } from 'shared/ui/common/Title'
-import { Input } from 'shared/ui/controls/Input'
 import { Button } from 'shared/ui/controls/Button'
-import { detectChain } from 'shared/utils/detectChain'
-import {
-  Bounty,
-  BountyStatus,
-  Chains,
-  defaultBountiesData,
-  getChainName,
-} from 'types/core'
-
-import WarningMarkSVG from 'assets/warningMark.svg'
+import { Bounty, BountyStatus, defaultBountiesData } from 'types/core'
 
 import s from './RejectModal.module.scss'
 

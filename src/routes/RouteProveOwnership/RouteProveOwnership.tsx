@@ -1,5 +1,7 @@
 import { Fragment, useEffect, useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
+import { useAccount, useConnect, useSignMessage } from 'wagmi'
+import { recoverMessageAddress } from 'viem'
 
 import { createRoute } from 'modules/router/utils/createRoute'
 import { noop } from 'shared/utils/noop'
@@ -43,10 +45,17 @@ const ourAddresses = [
 
 function RouteProveOwnership() {
   const { hash } = useLocation()
-  const navigate = useNavigate()
-  const [user] = useLocalStorage<UserData>('mando-user', defaultUserData)
+  const { isConnected } = useAccount()
+  const { connectors, connect } = useConnect()
+  const { data: signMessageData, signMessage, variables } = useSignMessage()
+  const [user, setUser] = useLocalStorage<UserData>(
+    'mando-user',
+    defaultUserData,
+  )
   const [currentTab, setCurrentTab] = useState(0)
-  const [verificationStep, setVerificationStep] = useState(0)
+  const [verificationStep, setVerificationStep] = useState<0 | 1 | 2>(
+    isConnected ? 1 : 0,
+  )
   const [messageInput, setMessageInput] = useState<string>('')
 
   useEffect(() => {
@@ -54,6 +63,23 @@ function RouteProveOwnership() {
       setCurrentTab(1)
     }
   }, [])
+
+  useEffect(() => {
+    ;(async () => {
+      if (variables?.message && signMessageData) {
+        const recoveredAddress = await recoverMessageAddress({
+          message: variables?.message,
+          signature: signMessageData,
+        })
+        setUser({
+          ...user,
+          verifiedAddresses: user.verifiedAddresses
+            ? [...user.verifiedAddresses, recoveredAddress]
+            : [recoveredAddress],
+        })
+      }
+    })()
+  }, [signMessageData, variables?.message])
 
   const renderVerified = () => {
     if (!user || !user.verifiedAddresses?.length) {
@@ -99,11 +125,18 @@ function RouteProveOwnership() {
                 <Text>
                   <b>Option 1:</b> Connect your web wallet, sign a message
                 </Text>
-                {verificationStep === 0 && (
+                {verificationStep === 0 && !isConnected && (
                   <Button
                     className={s.button}
                     onClick={() => {
-                      setVerificationStep(1) // TODO: add wallet connect
+                      const metamask = connectors.find(
+                        connector => connector.name === 'MetaMask',
+                      )
+                      if (!metamask) return
+                      connect(
+                        { connector: metamask },
+                        { onSuccess: () => setVerificationStep(1) },
+                      )
                     }}
                     size={40}
                   >
@@ -126,7 +159,10 @@ function RouteProveOwnership() {
                     <Button
                       className={s.button}
                       onClick={() => {
-                        setVerificationStep(2)
+                        signMessage(
+                          { message: messageInput },
+                          { onSuccess: () => setVerificationStep(2) },
+                        )
                       }}
                       isDisabled={!messageInput}
                       size={40}

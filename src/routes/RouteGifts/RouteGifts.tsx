@@ -16,7 +16,6 @@ import {
 
 import s from './RouteGifts.module.scss'
 
-// TODO: click to profile page
 function RouteGifts() {
   const navigate = useNavigate()
   const [bounties, setBounties] = useLocalStorage<Bounty[]>(

@@ -1,3 +1,5 @@
+import { constants } from 'starknet'
+
 export const Asset = {
   USDC: 'USDC',
   USDT: 'USDT',
@@ -13,7 +15,7 @@ export type Asset = (typeof Asset)[keyof typeof Asset]
 export const Chains = {
   EVM: 1,
   Solana: 101, // TODO: change to actual value
-  Starknet: 0, // TODO: change to actual value
+  Starknet: Number(constants.StarknetChainId.SN_MAIN),
   BTC: 2203,
 } as const
 // intentionally
