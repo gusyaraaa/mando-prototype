@@ -1,7 +1,9 @@
 {
   "name": "mando-prototype",
-  "private": true,
   "version": "0.0.1",
+  "private": true,
+  "homepage": "/",
+  "type": "module",
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
@@ -20,7 +22,6 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "/",
   "dependencies": {
     "@masa-finance/analytics-react": "latest",
     "@redstone-finance/evm-connector": "0.2.3",
