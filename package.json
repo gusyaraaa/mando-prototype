@@ -65,6 +65,7 @@
     "react-jazzicon": "^1.0.4",
     "react-paginate": "8.1.4",
     "react-router-dom": "6.2.1",
+    "serve": "^14.2.1",
     "starknet": "^5.24.3",
     "swr": "2.1.5",
     "turbo": "1.9.9",
@@ -85,7 +86,6 @@
   "devDependencies": {
     "jest": "^28.1.0",
     "sass": "^1.54.5",
-    "serve": "^14.2.1",
     "sharp": "0.32.1",
     "svgo": "3.0.2",
     "ts-jest": "^28.0.3"
