@@ -95,15 +95,7 @@ function HeaderRaw() {
           testId="header-bounty-link"
         />
       </div>
-      <div className={s.actions}>
-        <Button
-          size={40}
-          fashion="secondary"
-          onClick={handleChangeTheme}
-          testId="header-theme-button"
-        >
-          <Theme />
-        </Button>
+      <div>
         <Button
           size={40}
           fashion={'accent-light'}
