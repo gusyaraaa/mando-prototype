@@ -2,6 +2,7 @@ import { memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { Link } from 'shared/ui/controls/Link'
+import { ThemesEnum, getLSTheme, setLSTheme } from 'modules/themes'
 import * as links from 'modules/router/links'
 import { HeaderLogo } from '../HeaderLogo'
 import { HeaderLink } from '../HeaderLink'
@@ -20,6 +21,7 @@ import TransactionList from 'assets/transactionList.svg'
 import Borrow from 'assets/borrow.svg'
 import Wallet from 'assets/wallet.svg'
 import Stake from 'assets/stake.svg'
+import Theme from 'assets/theme.svg'
 
 import s from './Header.module.scss'
 
@@ -33,6 +35,12 @@ function HeaderRaw() {
     'mando-bounties',
     defaultBountiesData,
   )
+
+  const handleChangeTheme = () => {
+    const theme = getLSTheme()
+    setLSTheme(theme === ThemesEnum.DARK ? ThemesEnum.LIGHT : ThemesEnum.DARK)
+    location.reload()
+  }
 
   const handleLogout = () => {
     setUser({
@@ -87,7 +95,15 @@ function HeaderRaw() {
           testId="header-bounty-link"
         />
       </div>
-      <div>
+      <div className={s.actions}>
+        <Button
+          size={40}
+          fashion="secondary"
+          onClick={handleChangeTheme}
+          testId="header-theme-button"
+        >
+          <Theme />
+        </Button>
         <Button
           size={40}
           fashion={'accent-light'}

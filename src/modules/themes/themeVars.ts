@@ -4,87 +4,110 @@ import { ThemesEnum } from './constants'
 const themedIndexes = [ThemesEnum.DARK, ThemesEnum.LIGHT]
 
 const themedSets = {
-  colorBranded: ['#3DA2FF', ''],
-  colorBranded08: ['rgba(61, 162, 255, 0.08)', ''],
-  colorBranded10: ['rgba(61, 162, 255, 0.1)', ''],
-  colorBranded16: ['rgba(61, 162, 255, 0.16)', ''],
-  colorBranded12: ['rgba(61, 162, 255, 0.12)', ''],
-  colorBranded20: ['rgba(61, 162, 255, 0.2)', ''],
-  colorBranded24: ['rgba(61, 162, 255, 0.24)', ''],
-  colorBranded30: ['rgba(61, 162, 255, 0.3)', ''],
-  colorBranded60: ['rgba(61, 162, 255, 0.6)', ''],
+  colorWrapperBg: [
+    'radial-gradient(64.89% 64.89% at 76.7% -2.39%, rgba(128, 0, 255, 0.36) 0%, rgba(36, 0, 255, 0.14) 44.71%, rgba(24, 3, 255, 0) 100%), radial-gradient(60.01% 60.01% at 39.17% -1.17%, rgba(145, 58, 239, 0.3) 0%, rgba(132, 17, 255, 0.06) 60.68%, rgba(146, 44, 255, 0) 100%), radial-gradient(41.99% 41.99% at 56.08% 46.87%, #1a0f33 0%, #090012 100%)',
+    'radial-gradient(41.99% 41.99% at 56.08% 46.87%, #FFFFFF 0%, #FAF8FF 100%), radial-gradient(60.01% 60.01% at 39.17% -1.17%, rgba(123, 0, 255, 0.175) 0%, rgba(132, 17, 255, 0.035) 60.68%, rgba(146, 44, 255, 0) 100%), radial-gradient(151.04% 21.37% at 76.7% -2.39%, rgba(0, 26, 255, 0.1512) 0%, rgba(5, 0, 255, 0.0392) 44.71%, rgba(24, 3, 255, 0) 100%), linear-gradient(360deg, rgba(90, 64, 255, 0.006) 64.86%, rgba(145, 135, 255, 0.234018) 101.61%)',
+  ],
+  colorHeaderHover: ['rgba(51, 255, 157, 0.5)', 'rgba(66, 0, 255, 0.5)'],
+  colorHeaderActive: ['rgb(51, 255, 157)', 'rgba(66, 0, 255)'],
+  colorHeaderThemeSvg: ['#ffffff', '#000626'],
+  colorBlurBg: ['rgba(8, 5, 11, 0.3)', 'rgba(255, 255, 255, 0.3)'],
 
-  colorGreenApple: ['rgb(51, 255, 157)', '#ffffff'],
-  colorGreenApple08: ['rgba(51, 255, 157, 0.08)', '#ffffff'],
-  colorGreenApple10: ['rgba(51, 255, 157, 0.1)', '#ffffff'],
-  colorGreenApple16: ['rgba(51, 255, 157, 0.16)', '#ffffff'],
-  colorGreenApple20: ['rgba(51, 255, 157, 0.2)', '#ffffff'],
-  colorGreenApple30: ['rgba(51, 255, 157, 0.3)', '#ffffff'],
-  colorGreenApple40: ['rgba(51, 255, 157, 0.4)', '#ffffff'],
-  colorGreenApple50: ['rgba(51, 255, 157, 0.5)', '#ffffff'],
-  colorGreenApple80: ['rgba(51, 255, 157, 0.8)', '#ffffff'],
+  colorCardGradientBg: [
+    'radial-gradient(89.51% 85.18% at 19.14% 9.79%, rgba(255, 138, 0, 0.182) 0%, rgba(255, 0, 229, 0.0104) 100%)',
+    'radial-gradient(89.51% 85.18% at 19.14% 9.79%, rgba(123, 0, 255, 0.175) 0%, rgba(146, 44, 255, 0) 100%)',
+  ],
+  colorCardSvg: ['#e7891b', '#7b00ff'],
 
-  colorBlue: ['rgba(0, 133, 255)', '#ffffff'],
-  colorBlue10: ['rgba(0, 133, 255, 0.1)', '#ffffff'],
-  colorBlue30: ['rgba(0, 133, 255, 0.3)', '#ffffff'],
+  colorChatDateBg: ['rgba(70, 21, 79, 0.845)', 'rgba(244, 180, 255, 0.845)'],
+  colorChatSendSvg: ['#FFFFFF', '#000626'],
+  colorChatLockSvg: ['rgba(181, 190, 237, 0.8)', '#000626'],
 
-  colorGreenAppleSoft: ['#40FCAD', '#ffffff'],
+  colorBranded: ['#3DA2FF', '#3DA2FF'],
+  colorBranded08: ['rgba(61, 162, 255, 0.08)', 'rgba(61, 162, 255, 0.08)'],
+  colorBranded10: ['rgba(61, 162, 255, 0.1)', 'rgba(61, 162, 255, 0.1)'],
+  colorBranded16: ['rgba(61, 162, 255, 0.16)', 'rgba(61, 162, 255, 0.16)'],
+  colorBranded12: ['rgba(61, 162, 255, 0.12)', 'rgba(61, 162, 255, 0.12)'],
+  colorBranded20: ['rgba(61, 162, 255, 0.2)', 'rgba(61, 162, 255, 0.2)'],
+  colorBranded24: ['rgba(61, 162, 255, 0.24)', 'rgba(61, 162, 255, 0.24)'],
+  colorBranded30: ['rgba(61, 162, 255, 0.3)', 'rgba(61, 162, 255, 0.3)'],
+  colorBranded60: ['rgba(61, 162, 255, 0.6)', 'rgba(61, 162, 255, 0.6)'],
 
-  colorError10: ['rgba(255, 61, 107, 0.1)', '#ffffff'],
-  colorError15: ['rgba(255, 61, 107, 0.15)', '#ffffff'],
-  colorError20: ['rgba(255, 61, 107, 0.2)', '#ffffff'],
-  colorError24: ['rgba(255, 61, 107, 0.24)', '#ffffff'],
-  colorError40: ['rgba(255, 61, 107, 0.4)', '#ffffff'],
-  colorError: ['rgba(255, 61, 107, 1)', '#ffffff'],
-  colorErrorMessage: ['rgba(237, 181, 218, 0.8)', '#ffffff'],
+  colorGreenApple: ['rgb(51, 255, 157)', 'rgb(0, 128, 0)'],
+  colorGreenApple08: ['rgba(51, 255, 157, 0.08)', 'rgb(0, 128, 0, 0.08)'],
+  colorGreenApple10: ['rgba(51, 255, 157, 0.1)', 'rgb(0, 128, 0, 0.1)'],
+  colorGreenApple16: ['rgba(51, 255, 157, 0.16)', 'rgb(0, 128, 0, 0.16)'],
+  colorGreenApple20: ['rgba(51, 255, 157, 0.2)', 'rgb(0, 128, 0, 0.2)'],
+  colorGreenApple30: ['rgba(51, 255, 157, 0.3)', 'rgb(0, 128, 0, 0.3)'],
+  colorGreenApple40: ['rgba(51, 255, 157, 0.4)', 'rgb(0, 128, 0, 0.4)'],
+  colorGreenApple50: ['rgba(51, 255, 157, 0.5)', 'rgb(0, 128, 0, 0.5)'],
+  colorGreenApple80: ['rgba(51, 255, 157, 0.8)', 'rgb(0, 128, 0, 0.6)'],
 
-  colorDanger10: ['rgba(255, 201, 61, 0.1)', '#ffffff'],
-  colorDanger20: ['rgba(255, 201, 61, 0.2)', '#ffffff'],
-  colorDanger: ['rgba(255, 201, 61, 1)', '#ffffff'],
+  colorBlue: ['rgba(0, 133, 255)', 'rgba(66, 0, 255)'],
+  colorBlue10: ['rgba(0, 133, 255, 0.1)', 'rgba(66, 0, 255, 0.1)'],
+  colorBlue30: ['rgba(0, 133, 255, 0.3)', 'rgba(66, 0, 255, 0.3)'],
+  colorBlue50: ['rgba(0, 133, 255, 0.5)', 'rgba(66, 0, 255, 0.5)'],
 
-  colorWarning0: ['rgba(255, 201, 61, 0)', '#ffffff'],
-  colorWarning08: ['rgba(255, 201, 61, 0.08)', '#ffffff'],
-  colorWarning10: ['rgba(255, 201, 61, 0.1)', '#ffffff'],
-  colorWarning16: ['rgba(255, 201, 61, 0.16)', '#ffffff'],
-  colorWarning32: ['rgba(255, 201, 61, 0.32)', '#ffffff'],
-  colorWarning20: ['rgba(255, 201, 61, 0.2)', '#ffffff'],
-  colorWarning24: ['rgba(255, 201, 61, 0.24)', '#ffffff'],
-  colorWarning50: ['rgba(255, 201, 61, 0.5)', '#ffffff'],
-  colorWarning: ['rgba(255, 201, 61, 1)', '#ffffff'],
+  colorGreenAppleSoft: ['#40FCAD', '#40FCAD'],
 
+  colorError10: ['rgba(255, 61, 107, 0.1)', 'rgba(255, 61, 107, 0.1)'],
+  colorError15: ['rgba(255, 61, 107, 0.15)', 'rgba(255, 61, 107, 0.15)'],
+  colorError20: ['rgba(255, 61, 107, 0.2)', 'rgba(255, 61, 107, 0.2)'],
+  colorError24: ['rgba(255, 61, 107, 0.24)', 'rgba(255, 61, 107, 0.24)'],
+  colorError40: ['rgba(255, 61, 107, 0.4)', 'rgba(255, 61, 107, 0.4)'],
+  colorError: ['rgba(255, 61, 107)', 'rgba(255, 61, 107)'],
+  colorErrorMessage: ['rgba(237, 181, 218, 0.8)', 'rgba(237, 181, 218, 0.8)'],
+
+  colorWarning08: ['rgba(255, 201, 61, 0.08)', 'rgba(255, 201, 61, 0.08)'],
+  colorWarning10: ['rgba(255, 201, 61, 0.1)', 'rgba(255, 201, 61, 0.1)'],
+  colorWarning16: ['rgba(255, 201, 61, 0.16)', 'rgba(255, 201, 61, 0.16)'],
+  colorWarning20: ['rgba(255, 201, 61, 0.2)', 'rgba(255, 201, 61, 0.2)'],
+  colorWarning24: ['rgba(255, 201, 61, 0.24)', 'rgba(255, 201, 61, 0.24)'],
+  colorWarning32: ['rgba(255, 201, 61, 0.32)', 'rgba(255, 201, 61, 0.32)'],
+  colorWarning50: ['rgba(255, 201, 61, 0.5)', 'rgba(255, 201, 61, 0.5)'],
+  colorWarning: ['rgba(255, 201, 61, 1)', 'rgba(255, 201, 61, 1)'],
   // Text
   colorText: ['#ffffff', '#000626'],
   colorTextContrast: ['#000626', '#ffffff'],
-  colorTextSecondary13: ['rgba(181, 190, 237, 0.13)', '#ffffff'],
-  colorTextSecondary16: ['rgba(181, 190, 237, 0.16)', '#ffffff'],
-  colorTextSecondary50: ['rgba(181, 190, 237, 0.5)', '#ffffff'],
-  colorTextSecondary80: ['rgba(181, 190, 237, 0.8)', '#ffffff'],
-  colorFf36: ['rgba(193, 217, 254, 0.36)', ''],
-  colorFf72: ['rgba(193, 217, 254, 0.72)', ''],
+  colorTextSecondary13: ['rgba(181, 190, 237, 0.13)', 'rgba(30, 39, 73, 0.13)'],
+  colorTextSecondary16: ['rgba(181, 190, 237, 0.16)', 'rgba(30, 39, 73, 0.16)'],
+  colorTextSecondary50: ['rgba(181, 190, 237, 0.5)', 'rgba(30, 39, 73, 0.5)'],
+  colorTextSecondary80: ['rgba(181, 190, 237, 0.8)', 'rgba(30, 39, 73, 0.8)'],
+  colorFf36: ['rgba(193, 217, 254, 0.36)', 'rgba(193, 217, 254, 0.36)'],
+  colorFf72: ['rgba(193, 217, 254, 0.72)', 'rgba(193, 217, 254, 0.72)'],
 
   // Background
   colorBgDeep: ['#070315', '#F9FAFE'],
   colorBgError: ['#9e0035', '#FFFFFF'],
 
   // Borders
-  colorBorder: ['#424166', '#B4B5D8'],
+  colorBorder: ['#424166', 'rgba(140, 125, 181, 0.24)'],
 
   // Controls
-  colorControlBg: ['rgba(193, 217, 254, 0.04)', ''],
-  colorControlBgHover: ['rgba(193, 217, 254, 0.12)', ''],
-  colorControlBgHoverStrong: ['rgba(193, 217, 254, 0.24)', ''],
-  colorControlBorder06: ['rgba(217, 218, 255, 0.06)', ''],
-  colorControlBorder08: ['rgba(217, 218, 255, 0.08)', ''],
-  colorControlBorder10: ['rgba(217, 218, 255, 0.1)', ''],
+  colorControlBg: ['rgba(193, 217, 254, 0.04)', 'rgba(9, 2, 96, 0.06)'],
+  colorControlBgHover: ['rgba(193, 217, 254, 0.12)', 'rgba(9, 2, 96, 0.14)'],
+  colorControlBgHoverStrong: [
+    'rgba(193, 217, 254, 0.24)',
+    'rgba(9, 2, 96, 0.26)',
+  ],
+  colorControlBorder06: ['rgba(217, 218, 255, 0.06)', 'rgba(9, 2, 96, 0.06)'],
+  colorControlBorder08: ['rgba(217, 218, 255, 0.08)', 'rgba(9, 2, 96, 0.08)'],
+  colorControlBorder10: ['rgba(217, 218, 255, 0.1)', 'rgba(9, 2, 96, 0.1)'],
   colorControlBlurFallback: ['#090715f6', ''],
 
   // Input
-  colorInputBorder08: ['rgba(222, 215, 229, 0.08)', ''],
-  colorInputBorder16: ['rgba(222, 215, 229, 0.16)', ''],
-  colorInputBg: ['rgba(222, 215, 229, 0.03)', ''],
-  colorInputPlaceholder: ['rgba(181, 190, 237, 0.5)', ''],
-  colorInputBorderHover: ['rgba(181, 190, 237, 0.5)', ''],
-  colorInputBorderFocus: ['rgba(183, 232, 47, 0.4)', ''],
+  colorInputBorder08: [
+    'rgba(222, 215, 229, 0.08)',
+    'rgba(140, 125, 181, 0.08)',
+  ],
+  colorInputBorder16: [
+    'rgba(222, 215, 229, 0.16)',
+    'rgba(140, 125, 181, 0.16)',
+  ],
+  colorInputBg: ['rgba(222, 215, 229, 0.03)', 'rgba(9, 2, 96, 0.06)'],
+  colorInputPlaceholder: ['rgba(181, 190, 237, 0.5)', 'rgba(16, 8, 39, 0.66)'],
+  colorInputBorderHover: ['rgba(181, 190, 237, 0.5)', 'rgba(16, 8, 39, 0.66)'],
+  colorInputBorderFocus: ['rgba(183, 232, 47, 0.4)', 'rgba(183, 232, 47, 0.4)'],
   colorInputTextDisabled: ['', ''],
   colorInputBorderDisabled: ['', ''],
   colorInputPlaceholderDisabled: ['', ''],
@@ -105,8 +128,8 @@ const themedSets = {
   colorTabGold: ['rgba(255, 192, 0, 1)', ''],
   colorTabGoldSecondary: ['rgb(255, 192, 0, 0.6)', ''],
 
-  colorTabPurple: ['rgba(158, 0, 255 , 1)', ''],
-  colorTabPurpleSecondary: ['rgba(158, 0, 255, 0.6)', ''],
+  colorTabPurple: ['rgba(158, 0, 255 , 1)', 'rgba(66, 0, 255, 1)'],
+  colorTabPurpleSecondary: ['rgba(158, 0, 255, 0.6)', 'rgba(66, 0, 255, 0.6)'],
 
   colorTabBlue: ['rgba(59, 90, 255, 1)', ''],
   colorTabBlueSecondary: ['rgba(59, 90, 255, 0.6)', ''],
@@ -171,7 +194,7 @@ const shared = {
 export function getThemeColors(theme: ThemesEnum) {
   const themeIndex = themedIndexes.findIndex(t => t === theme)
 
-  const themed = mapValues(themedSets, t => t[themeIndex]) as {
+  const themed = mapValues(themedSets, t => t[themeIndex] ? t[themeIndex] : t[0]) as {
     [key in keyof typeof themedSets]: string
   }
 

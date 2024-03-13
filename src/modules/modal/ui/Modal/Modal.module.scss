@@ -32,7 +32,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(8, 5, 11, 0.3);
+  background-color: var(--colorBlurBg);
   @include blurOrFallback(24px, var(--colorControlBlurFallback));
 
   @supports (backdrop-filter: blur(24px)) {

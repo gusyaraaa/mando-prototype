@@ -22,11 +22,7 @@
     pointer-events: none;
   }
 
-  background: radial-gradient(
-    89.51% 85.18% at 19.14% 9.79%,
-    rgba(255, 138, 0, 0.182) 0%,
-    rgba(255, 0, 229, 0.0104) 100%
-  );
+  background: var(--colorCardGradientBg);
   border-radius: 24px;
 
   text-transform: uppercase;
@@ -93,10 +89,10 @@
         }
       }
       .isBounty {
-        background: var(--colorGreenApple10);
+        background: var(--colorGreenApple20);
 
         &:hover {
-          background: var(--colorGreenApple20);
+          background: var(--colorGreenApple30);
         }
       }
       .isActive {
@@ -141,9 +137,13 @@
       align-items: center;
       justify-content: center;
 
-      background-color: rgba(8, 5, 11, 0.3);
+      background-color: var(--colorBlurBg);
       @include blurOrFallback(24px, var(--colorControlBlurFallback));
 
+
+      svg path {
+        stroke: var(--colorChatLockSvg);
+      }
       .buttons {
         display: flex;
         gap: 10px;
@@ -183,7 +183,7 @@
         top: 0;
         padding: 3px 6px;
         margin: 0 auto;
-        background: rgba(70, 21, 79, 0.845);
+        background: var(--colorChatDateBg);
         border: 1px solid var(--colorControlBorder06);
         border-radius: 10px;
       }
@@ -224,6 +224,11 @@
       }
       .placeholderInvisible {
         display: none;
+      }
+      .send {
+        svg path {
+          fill: var(--colorChatSendSvg);
+        }
       }
     }
     .empty {

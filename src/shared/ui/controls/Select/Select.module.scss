@@ -118,7 +118,9 @@
 
 .arrow {
   display: block;
-  fill: var(--colorInputPlaceholder);
+  path {
+    stroke: var(--colorHeaderThemeSvg);
+  }
   transition: transform var(--easeOutBack) var(--durNorm);
 
   .isFocused & {

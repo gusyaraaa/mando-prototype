@@ -11,18 +11,18 @@
   &:hover {
     transition-duration: var(--durFast);
 
-    color: var(--colorGreenApple50);
+    color: var(--colorHeaderHover);
 
     & .linkIcon svg {
-      fill: var(--colorGreenApple50);
+      fill: var(--colorHeaderHover);
     }
   }
 
   &.isActive {
-    color: var(--colorGreenApple);
+    color: var(--colorHeaderActive);
 
     & .linkIcon svg {
-      fill: var(--colorGreenApple);
+      fill: var(--colorHeaderActive);
     }
   }
 }

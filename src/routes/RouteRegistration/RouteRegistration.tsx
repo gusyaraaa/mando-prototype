@@ -129,7 +129,7 @@ function RouteRegistration() {
         <Text color="secondary80" isInLine isUppercased>
           Already have an account?{' '}
         </Text>
-        <Text color="greenapple" isInLine isUppercased>
+        <Text color="branded" isInLine isUppercased>
           Sign In
         </Text>
       </div>

@@ -31,11 +31,7 @@
     pointer-events: none;
   }
 
-  background: radial-gradient(
-    89.51% 85.18% at 19.14% 9.79%,
-    rgba(255, 138, 0, 0.182) 0%,
-    rgba(255, 0, 229, 0.0104) 100%
-  );
+  background: var(--colorCardGradientBg);
   border-radius: 24px;
 
   text-transform: uppercase;
@@ -51,7 +47,7 @@
       text-transform: none;
     }
     svg {
-      fill: #e7891b;
+      fill: var(--colorCardSvg);
       width: 32px;
       height: 32px;
       margin-right: 16px;
@@ -88,9 +84,6 @@
       }
       .amount {
         min-width: 120px;
-      }
-      .value {
-        color: #ffffff;
       }
 
       .buttonsWrapper {
