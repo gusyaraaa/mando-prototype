@@ -1,5 +1,6 @@
 # Deployed on:
-https://mando-prototype2-2cad0aa90945.herokuapp.com
+https://mando-prototype.netlify.app
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
